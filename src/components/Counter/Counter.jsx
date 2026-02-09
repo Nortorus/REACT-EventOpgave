@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const Counter = () => {
 
@@ -11,6 +11,11 @@ const Counter = () => {
     function reset() {
         setCount(0)
     }
+
+    useEffect(() => {
+        console.log(`Der blivet klikket ${count} gange!`);
+        document.title = `Klikket ${count} gange!`;
+    }, [count])
     
   return (
     <>
